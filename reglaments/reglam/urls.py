@@ -2,7 +2,7 @@ from django.urls import path
 from .views import *
 from rest_framework import routers
 from django.urls import include
-
+# dsa
 router = routers.SimpleRouter()
 router_task = routers.SimpleRouter()
 router.register(r'reglam', ReglamentListApiView)
