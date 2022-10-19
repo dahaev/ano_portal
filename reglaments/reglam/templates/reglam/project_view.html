@@ -1,0 +1,19 @@
+{% extends "reglam/base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="container_content">
+        <div class="post">
+            <p><h4>{{post.project_name }}</p></h4>
+            <p>Разрешение на ввод в эксплутацию: {{ post.task_date_end }}</p>
+            <p><h6>Реперные задачи на IV квартал 2022г.</h6></p>
+            <p><h6>{{ post.reaper_3q_2022_plan }}</h6></p>
+            <div class="alert alert-info" role="alert">
+                Информация о ходе строительства
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

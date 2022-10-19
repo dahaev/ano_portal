@@ -1,0 +1,31 @@
+{% extends 'reglam/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="container_content">
+        <div class="alert alert-primary" role="alert">
+    <h6>Регламенты</h6>
+      </div>
+        <ul class="ul_reglament">
+        {% for reg in reg_list %}
+        <li class="li_order">
+        <div class="container text-left">
+            <div class="row align-items-start">
+                <div class="col-2">
+                    <div class="reg_date"><p>от {{ reg.reg_date }}</p></div>
+                </div>
+                <div class="col-4">
+                    <p><a class="order_link" href="{{ reg.get_absolute_url }}">{{ reg.reg_name }}</a></p>
+                </div>
+                <div class="col-2">
+                    <div class="reg_date"><p>{{ reg.reg_type }}</p></div>
+                </div>
+            </div>
+        </div>
+        </li>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

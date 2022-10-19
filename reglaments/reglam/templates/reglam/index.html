@@ -1,0 +1,39 @@
+{% extends 'reglam/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="container_content_table_rep">
+      <div class="alert alert-primary" role="alert">
+    <h6>Реперные задачи на IV квартал</h6>
+      </div>
+    <table class="table table-borderless table-sm">
+  <thead>
+    <tr>
+      <th scope="col" style="width:1%"> </th>
+      <th scope="col" style="width:30%">Проект</th>
+      <th scope="col" style="width:35%">Наименование задачи</th>
+      <th scope="col">Текущая дата</th>
+      <th scope="col">Плановая дата</th>
+      <th scope="col">Статус задачи</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in index_view %}
+      <tr>
+        <th scope="row"></th>
+        <td>{{ i.project_name }}</td>
+        <td>{{ i.task_name }}</td>
+        <td>{{ i.task_date_end }}</td>
+        <td>{{ i.reaper_4q2022_plan }}</td>
+        <td>{{ i.task_status }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+        <a class="btn btn-primary" href="{% url 'update' %}" role="button">Обновить базу данных</a>
+        </div>
+</div>
+
+
+{% endblock %}

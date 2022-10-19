@@ -1,0 +1,32 @@
+{% extends "reglam/base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="container_content">
+         <div class="alert alert-primary" role="alert">
+    <h6>Проекты: {{ project_count }}</h6>
+      </div>
+        <div class="post">
+            <ul class="ul_reglament">
+                {% for item in rv_task %}
+                <li class="li_order">
+                    <div class="row align-items-start">
+                        <div class="col-2">
+                            {{ item.task_date_end }}
+                        </div>
+                        <div class="col-5">
+                        <p><a href="{{ item.get_absolute_url }}"> {{ item.project_name }}</a></p>
+                        </div>
+                        <div class="col-2">
+                            {{ item.pk }}
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

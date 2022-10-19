@@ -1,0 +1,20 @@
+{% extends "reglam/base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="container_content">
+        <div class="post">
+            <ul>
+                {% for item in list_task %}
+                <li>
+                    {{ item.project_name }}
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
