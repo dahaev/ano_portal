@@ -4,6 +4,7 @@ from .models import *
 from .serializers import Reglam_Serizalizer, Task_Serializer
 from rest_framework import generics, viewsets
 from ano_connect import db_python_config
+from reglam.tasks import update_data_base_celery
 import datetime
 
 class NewsListView(ListView):
@@ -90,6 +91,7 @@ class TasksListApiView(viewsets.ReadOnlyModelViewSet):
 def db_update(request):
     start_time = datetime.datetime.now()
     db_python_config.update_data_base()
-    end_tima = datetime.datetime.now()
-    return HttpResponse(f'Время обновления базы данных: {end_tima-start_time}')
+    end_time = datetime.datetime.now()
+    # update_data_base_celery.delay()
+    return HttpResponse(f'Обновление базы данных запущено: {start_time - end_time}')
 
